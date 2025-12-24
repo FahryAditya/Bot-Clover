@@ -1,38 +1,22 @@
-/**
- * CONFIG BOT CLOVER
- * Semua pengaturan bot ada di sini
- * Jangan hardcode di file lain
- */
-
 module.exports = {
-  /* ======================
-     IDENTITAS BOT
-  ====================== */
   bot: {
     name: 'Bot Clover',
     ownerName: 'Owner Clover',
-    ownerNumber: ['628xxxxxxxxxx'], // ganti nomor kamu
+    ownerNumber: [process.env.OWNER_NUMBER || '628xxxxxxxxxx'],
     version: '1.0.0'
   },
 
-  /* ======================
-     MODE BOT
-  ====================== */
   mode: {
-    public: true,        // true = semua user
-    respondGroup: true,  // respon di grup
-    respondPrivate: true // respon di chat pribadi
+    public: true,
+    respondGroup: true,
+    respondPrivate: true
   },
 
-  /* ======================
-     COMMAND
-  ====================== */
-  prefix: '!',         // ✅ langsung bisa dipakai di handler.js
-  ignoreCase: true,    // bisa diterapkan di handler kalau mau
+  command: {
+    prefix: '!',
+    ignoreCase: true
+  },
 
-  /* ======================
-     MESSAGE TEMPLATE
-  ====================== */
   message: {
     wait: '⏳ Tunggu sebentar...',
     error: '⚠️ Terjadi kesalahan.',
@@ -41,16 +25,10 @@ module.exports = {
     groupOnly: '❌ Command ini hanya bisa di grup.'
   },
 
-  /* ======================
-     API CONFIG
-  ====================== */
   api: {
     timeout: 10000
   },
 
-  /* ======================
-     LOGGING
-  ====================== */
   log: {
     showCommand: true,
     showError: true
